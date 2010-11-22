@@ -17,6 +17,7 @@ if !exists(':SmartHomeKey')
 endif
 
 function! SmartHomeKey()
+	let l:lnum	=	line('.')
 	let l:ccol	=	col('.')
 	execute 'normal! ^'
 	let l:fcol	=	col('.')
@@ -24,9 +25,9 @@ function! SmartHomeKey()
 	let l:hcol	=	col('.')
 
 	if l:ccol != l:fcol
-		call cursor(v:lnum, l:fcol)
+		call cursor(l:lnum, l:fcol)
 	else
-		call cursor(v:lnum, l:hcol)
+		call cursor(l:lnum, l:hcol)
 	endif
 endfun
 
